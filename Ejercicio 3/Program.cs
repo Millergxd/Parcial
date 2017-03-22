@@ -20,7 +20,7 @@ namespace ConsoleApplication2
             int producto = 0;
             int[][] matrizAux = null;
             int []vecAux = null;
-            vecAux =new int [3];
+            vecAux =new int [4];
             matrizAux = new int[matriz.Length][];
             for (int i = 0; i < matriz.Length; i++)
             {
@@ -62,6 +62,10 @@ namespace ConsoleApplication2
                         matrizAux[i][j] = aux;
                     }
                 }
+                maximaCapacidad = 0;
+                mayorGanancia = 0;
+                aux = 0;
+                aux2 = 0;
             }
             for (int i = 0; i < matrizAux.Length; i++ )
             {
@@ -69,13 +73,17 @@ namespace ConsoleApplication2
                 {
                     if (matrizAux[i][1] < matrizAux[i + 1][1])
                     {
-                        for (int j = 0; j < matriz[i].Length; j++)
+                        for (int j = 0; j < matrizAux[i].Length; j++)
                         {
                             vecAux[j] = matrizAux[i + 1][j];
                         }
-                        for (int j = 0; j < matriz[i].Length; j++)
+                        for (int j = 0; j < matrizAux[i].Length; j++)
                         {
                             matrizAux[i][j] = matrizAux[i + 1][j];
+                        }
+                        for (int j = 0; j < matrizAux[i].Length; j++)
+                        {
+                            vecAux[j] = matrizAux[i][j];
                         }
                     }
                 }
@@ -100,7 +108,7 @@ namespace ConsoleApplication2
             int productos = 0;
             char delimiter = ' ';
             String lineAux = null;
-            String route = "C:\\Users\\william.munoz\\Desktop\\Parcial\\Projects\\ConsoleApplication2\\ConsoleApplication2\\bodega.in";
+            String route = "bodega.in";
             String[] subStrings = null;
             file entrada = new file(route);
             entrada.openFile();

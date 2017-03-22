@@ -58,13 +58,12 @@ namespace ConsoleApplication1
                     }
                    
                 }
-                if (solo)
-                {
-                    Console.WriteLine("ninguno");
-                }
-                solo = false;
+                
             }
-            
+            if (solo)
+            {
+                Console.WriteLine("ninguno");
+            }
             Console.WriteLine();
         }
         static void Main(string[] args)
@@ -75,7 +74,7 @@ namespace ConsoleApplication1
             String lineAux = null;
             char delimiter = ' ';
             String[] sizeM = null;
-            String route = "C:\\Users\\william.munoz\\Documents\\Visual Studio 2012\\Projects\\ConsoleApplication1\\ConsoleApplication1\\soldados.in";
+            String route = "soldados.in";
             file entrada = new file(route);
             entrada.openFile();
             lineAux = entrada.getLine();
